@@ -101,7 +101,7 @@ export function QuoteForm({ initialSlugs = [] }: { initialSlugs?: string[] }) {
           href={whatsappLink(summary)}
           target="_blank"
           rel="noopener noreferrer"
-          className="pm-btn pm-btn-secondary"
+          className="pm-btn pm-btn-whatsapp"
         >
           <WhatsAppIcon className="h-4 w-4" />
           Send on WhatsApp too
@@ -239,7 +239,7 @@ export function QuoteForm({ initialSlugs = [] }: { initialSlugs?: string[] }) {
           href={whatsappLink(summary)}
           target="_blank"
           rel="noopener noreferrer"
-          className="pm-btn pm-btn-outline"
+          className="pm-btn pm-btn-whatsapp"
         >
           <WhatsAppIcon className="h-4 w-4" />
           Send on WhatsApp

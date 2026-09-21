@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { ProductCard } from "@/components/ProductCard";
 import { ProcessSteps } from "@/components/ProcessSteps";
-import { CheckIcon, PaletteIcon } from "@/components/icons";
+import { CheckIcon, PaletteIcon, WhatsAppIcon } from "@/components/icons";
 import { allItems, getItem } from "@/lib/catalog";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -105,8 +105,9 @@ export default function HireADesignerPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pm-btn pm-btn-secondary"
+                className="pm-btn pm-btn-whatsapp"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 Chat on WhatsApp
               </a>
               <a

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CloseIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { primaryNav, site, telLink, whatsappLink } from "@/lib/site";
 
 /** Slide-over navigation for phones and tablets. */
@@ -23,20 +24,23 @@ export function MobileMenu({
         type="button"
         aria-label="Close menu"
         onClick={onClose}
-        className="absolute inset-0 h-full w-full bg-brand-dark/50 backdrop-blur-sm"
+        className="absolute inset-0 h-full w-full bg-slate-950/60 backdrop-blur-sm"
       />
 
-      <div className="absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col bg-white shadow-float">
-        <div className="flex items-center justify-between border-b border-brand-border px-5 py-4">
+      <div className="absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col bg-white shadow-2xl transition-colors duration-300 dark:bg-slate-950">
+        <div className="flex items-center justify-between border-b border-brand-border px-5 py-4 dark:border-slate-800">
           <Logo href="/" />
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close menu"
-            className="grid h-9 w-9 place-items-center rounded-full border border-brand-border text-brand-dark"
-          >
-            <CloseIcon className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close menu"
+              className="grid h-9 w-9 place-items-center rounded-full border border-brand-border text-brand-dark transition hover:border-brand hover:text-brand dark:border-slate-800 dark:text-slate-200"
+            >
+              <CloseIcon className="h-5 w-5" />
+            </button>
+          </div>
         </div>
 
         <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-5 py-5">
@@ -98,15 +102,15 @@ export function MobileMenu({
           </div>
         </nav>
 
-        <div className="grid gap-2 border-t border-brand-border px-5 py-4">
-          <Link href="/get-a-quote" onClick={onClose} className="pm-btn pm-btn-primary">
+        <div className="grid gap-2.5 border-t border-brand-border px-5 py-4 dark:border-slate-800">
+          <Link href="/get-a-quote" onClick={onClose} className="pm-btn pm-btn-primary shadow-md">
             Get a Quote
           </Link>
           <a
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="pm-btn pm-btn-secondary"
+            className="pm-btn pm-btn-whatsapp"
           >
             <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp

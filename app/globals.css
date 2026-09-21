@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/*
+   ThemeProvider controls the `dark` class on <html>. Without this override,
+   Tailwind's dark: utilities follow the operating-system preference, which
+   lets dark styling appear even when the app toggle is set to light mode.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================================================
    PROMOLINK — BRAND TOKENS
    ----------------------------------------------------------------------------
@@ -10,13 +17,13 @@
    Do not hard-code brand colours inside components.
    ============================================================================ */
 :root {
-  --brand-primary: #d95a43;
-  --brand-primary-strong: #ad3d31;
-  --brand-secondary: #f0d9b8;
-  --brand-accent: #2d9fbd;
-  --brand-dark: #17202a;
-  --brand-light: #fffdf9;
-  --brand-muted: #5f5b59;
+  --brand-primary: #e3262e;
+  --brand-primary-strong: #c81e25;
+  --brand-secondary: #f6ebd8;
+  --brand-accent: #00aeef;
+  --brand-dark: #0f172a;
+  --brand-light: #ffffff;
+  --brand-muted: #4b5563;
   --brand-border: #eadfd7;
   --brand-green: #75ae39;
   --brand-red: #e3262e;
@@ -43,7 +50,7 @@
   --color-brand-green: var(--brand-green);
   --color-brand-red: var(--brand-red);
 
-  --font-sans: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-script: var(--font-caveat), cursive;
 
@@ -56,11 +63,16 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
     position: relative;
-    background-color: #fff;
+    background-color: #ffffff;
     background-image:
       linear-gradient(135deg, transparent 0 91%, rgb(217 90 67 / 0.12) 91% 94%, transparent 94%),
       linear-gradient(45deg, transparent 0 94%, rgb(240 217 184 / 0.32) 94% 97%, transparent 97%);
@@ -174,6 +186,17 @@
     filter: brightness(0.94);
   }
 
+  .pm-btn-whatsapp {
+    background-color: #25d366;
+    color: #062d16;
+    box-shadow: 0 8px 20px rgb(37 211 102 / 0.22);
+  }
+
+  .pm-btn-whatsapp:hover {
+    background-color: #1fbd59;
+    color: #fff;
+  }
+
   .pm-btn-outline {
     background-color: transparent;
     color: var(--brand-primary);
@@ -207,6 +230,16 @@
 
   .pm-card:hover {
     border-color: color-mix(in srgb, var(--brand-primary) 32%, var(--brand-border));
+  }
+
+  :is(.dark body) {
+    background-color: #0b0f17;
+    color: #f8fafc;
+  }
+
+  :is(.dark .pm-card) {
+    background-color: #111827;
+    border-color: #1e293b;
   }
 
   /* Small uppercase label used above section headings (Printhouse-style) --- */

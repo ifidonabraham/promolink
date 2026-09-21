@@ -231,3 +231,30 @@ export function socialIcon(name: "facebook" | "instagram" | "linkedin" | "x") {
       return XIcon;
   }
 }
+
+export function SunIcon(props: IconProps) {
+  return (
+    <svg {...base} aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  );
+}
+
+export function MoonIcon(props: IconProps) {
+  return (
+    <svg {...base} aria-hidden="true" {...props}>
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </svg>
+  );
+}
+
+export function SparklesIcon(props: IconProps) {
+  return (
+    <svg {...base} aria-hidden="true" {...props}>
+      <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z" />
+      <path d="M19 3v4M21 5h-4" />
+    </svg>
+  );
+}
+

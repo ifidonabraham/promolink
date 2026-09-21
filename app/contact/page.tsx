@@ -101,7 +101,7 @@ export default function ContactPage() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pm-btn pm-btn-secondary"
+                  className="pm-btn pm-btn-whatsapp"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   Chat on WhatsApp

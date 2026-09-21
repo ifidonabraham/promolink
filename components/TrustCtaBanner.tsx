@@ -68,10 +68,10 @@ export function TrustCtaBanner() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pm-btn pm-btn-ghost w-full text-white hover:bg-white/10 lg:w-auto"
+                className="pm-btn pm-btn-whatsapp w-full lg:w-auto shadow-lg"
               >
                 <WhatsAppIcon className="h-4 w-4" />
-                Chat with us now
+                Chat with us on WhatsApp
               </a>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Header } from "@/components/Header";
 import { NewsletterBar } from "@/components/NewsletterBar";
 import { QuoteListProvider } from "@/components/QuoteList";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { site } from "@/lib/site";
 
 const manrope = Manrope({
@@ -69,15 +70,17 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        <QuoteListProvider>
-          <Header />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <NewsletterBar />
-          <Footer />
-          <FloatingWhatsApp />
-        </QuoteListProvider>
+        <ThemeProvider>
+          <QuoteListProvider>
+            <Header />
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+            <NewsletterBar />
+            <Footer />
+            <FloatingWhatsApp />
+          </QuoteListProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -32,20 +32,20 @@ export function NewsletterBar() {
   }
 
   return (
-    <section className="bg-brand-dark text-white">
+    <section className="bg-brand-secondary text-brand-dark transition-colors duration-300 dark:bg-brand-dark dark:text-white">
       <div className="pm-container flex flex-col items-start justify-between gap-6 py-10 lg:flex-row lg:items-center">
         <div>
-          <h2 className="text-xl text-white sm:text-2xl">
+          <h2 className="text-xl text-brand-dark dark:text-white sm:text-2xl">
             Subscribe to our newsletter
           </h2>
-          <p className="mt-1.5 max-w-xl text-sm text-white/70">
+          <p className="mt-1.5 max-w-xl text-sm text-brand-muted dark:text-white/70">
             Promotions, new services and seasonal print offers — straight to your
             inbox.
           </p>
         </div>
 
         {state === "done" ? (
-          <p className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-semibold">
+          <p className="flex items-center gap-2 rounded-full bg-white/70 px-5 py-3 text-sm font-semibold dark:bg-white/10">
             <CheckIcon className="h-4 w-4 text-brand-secondary" />
             You are on the list. Thank you!
           </p>
@@ -62,7 +62,7 @@ export function NewsletterBar() {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="you@company.com"
-                className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white outline-none placeholder:text-white/50 focus:border-brand-secondary"
+                className="w-full rounded-full border border-brand-border bg-white px-5 py-3 text-sm text-brand-dark outline-none placeholder:text-brand-muted/70 focus:border-brand dark:border-white/20 dark:bg-white/10 dark:text-white dark:placeholder:text-white/50 dark:focus:border-brand-secondary"
               />
               <button
                 type="submit"

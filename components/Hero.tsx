@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRightIcon, CheckIcon, ClockIcon, StarIcon } from "@/components/icons";
+import { AnimatedHeroArtwork } from "@/components/AnimatedHeroArtwork";
 import { PromoBanner } from "@/components/PromoBanner";
 import { clients } from "@/lib/clients";
 import { site } from "@/lib/site";
@@ -61,25 +61,7 @@ export function Hero() {
         </div>
 
         <div className="relative pm-reveal [animation-delay:120ms]">
-          <div className="pm-card mx-auto w-full max-w-[30rem] overflow-hidden">
-            <Image
-              src="/brand/print-colour.jpg"
-              alt="PromoLink company profile artwork showing branded print production in Lagos"
-              width={748}
-              height={1058}
-              className="h-auto max-h-[30rem] w-full object-contain object-center"
-              priority
-            />
-            <div className="flex items-center justify-between gap-3 px-4 py-3">
-              <p className="text-sm font-semibold">Colour work off our presses</p>
-              <Link
-                href="/about"
-                className="text-sm font-semibold text-brand hover:text-brand-strong"
-              >
-                About us →
-              </Link>
-            </div>
-          </div>
+          <AnimatedHeroArtwork />
 
           <div className="pm-card mt-4 flex items-center gap-3 p-4">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand text-white">

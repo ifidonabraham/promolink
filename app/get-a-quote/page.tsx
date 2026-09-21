@@ -80,7 +80,7 @@ export default async function GetAQuotePage({ searchParams }: PageProps) {
                     href={whatsappLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pm-btn pm-btn-secondary pm-btn-sm mt-1"
+                    className="pm-btn pm-btn-whatsapp pm-btn-sm mt-1"
                   >
                     <WhatsAppIcon className="h-4 w-4" />
                     Chat on WhatsApp

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { QuoteListLink } from "@/components/QuoteList";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { MenuIcon, SearchIcon } from "@/components/icons";
 
 /** Icon cluster on the right of the sticky nav. */
@@ -18,10 +19,12 @@ export function HeaderActions({
         type="button"
         onClick={onOpenSearch}
         aria-label="Search"
-        className="grid h-10 w-10 place-items-center rounded-full border border-brand-border text-brand-dark transition hover:border-brand hover:text-brand"
+        className="grid h-10 w-10 place-items-center rounded-full border border-brand-border bg-white text-brand-dark transition-all duration-200 hover:border-brand hover:text-brand hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-brand"
       >
         <SearchIcon className="h-5 w-5" />
       </button>
+
+      <ThemeToggle />
 
       <QuoteListLink />
 
