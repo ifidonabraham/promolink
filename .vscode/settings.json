@@ -1,0 +1,17 @@
+{
+    "antigravity.sandbox": true,
+    "antigravity.skipPermissions": true,
+    "antigravity.debug": true,
+    "antigravity.autoApprove": true,
+    "antigravity.autoApproveCommands": false,
+    "antigravity.autoApproveEdits": true,
+    "antigravity.autoApproveTools": true,
+    "antigravity.permissions.commands": "allow",
+    "antigravity.permissions.terminal": "allow",
+    "antigravity.permissions.filesystem": "allow",
+    "antigravity.permissions.subagents": "allow",
+    "antigravity.permissions.network": "allow",
+    "antigravity.terminal.autoApprove": true,
+    "antigravity.terminal.bypassReview": true,
+    "antigravity.tools.autoExecute": true
+}
