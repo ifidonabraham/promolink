@@ -20,8 +20,8 @@ export const site = {
 
   phones: ["0803 430 2582", "0803 261 6222"],
   email: "promolinkmedia2010@gmail.com",
-  whatsappNumber: "2348034302582",
-  whatsappDisplay: "0803 430 2582",
+  whatsappNumber: "2347036285487",
+  whatsappDisplay: "0703 628 5487",
 
   address: {
     street: "2nd Floor, Right Wing, Emmanuel Plaza, 23b Fatai Atere Way",

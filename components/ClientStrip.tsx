@@ -2,10 +2,7 @@ import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { clients } from "@/lib/clients";
 
-/**
- * "Our Clients" logo strip with smooth hover scale,
- * elevation, and dark mode support.
- */
+/** "Our Clients" logo strip with linked organization cards. */
 export function ClientStrip() {
   return (
     <section className="border-y border-brand-border/80 bg-white py-12 transition-colors duration-300 dark:border-slate-800 dark:bg-[#0b0f17]">
@@ -23,29 +20,37 @@ export function ClientStrip() {
               key={client.name}
               className="group flex min-h-24 items-center justify-center rounded-2xl border border-brand-border/80 bg-slate-50/50 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-brand/50 hover:bg-white hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-red-500/50 dark:hover:bg-slate-900"
             >
-              {client.logo ? (
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={200}
-                  height={100}
-                  className="max-h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              ) : (
-                <div className="text-center">
-                  <ImagePlaceholder
-                    variant="client"
-                    label={client.short}
-                    className="mx-auto mb-2.5 h-10 w-10 rounded-xl transition-transform duration-300 group-hover:scale-110 shadow-sm"
+              <a
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${client.name} website`}
+                className="flex min-h-14 w-full items-center justify-center rounded-xl outline-offset-4"
+              >
+                {client.logo ? (
+                  <Image
+                    src={client.logo}
+                    alt=""
+                    width={200}
+                    height={100}
+                    className="max-h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   />
-                  <span className="block text-xs font-bold uppercase tracking-wider text-slate-700 transition-colors group-hover:text-brand dark:text-slate-300 dark:group-hover:text-red-400">
-                    {client.short}
-                  </span>
-                  <span className="block text-[10px] text-slate-400 dark:text-slate-500 line-clamp-1">
-                    {client.name}
-                  </span>
-                </div>
-              )}
+                ) : (
+                  <div className="text-center">
+                    <ImagePlaceholder
+                      variant="client"
+                      label={client.short}
+                      className="mx-auto mb-2.5 h-10 w-10 rounded-xl transition-transform duration-300 group-hover:scale-110 shadow-sm"
+                    />
+                    <span className="block text-xs font-bold uppercase tracking-wider text-slate-700 transition-colors group-hover:text-brand dark:text-slate-300 dark:group-hover:text-red-400">
+                      {client.short}
+                    </span>
+                    <span className="block line-clamp-1 text-[10px] text-slate-400 dark:text-slate-500">
+                      {client.name}
+                    </span>
+                  </div>
+                )}
+              </a>
             </li>
           ))}
         </ul>

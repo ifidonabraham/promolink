@@ -19,9 +19,8 @@ export const team: TeamMember[] = [
     role: "Executive Chairman",
     note: "B.Sc FNIM, FCTI, CFA, FCA — leads the company's strategy and client relationships.",
     bio: "Chris is a graduate of Accounting from Olabisi Onabanjo University, Ago Iwoye, Ogun State. He is a Fellow of the Institute of Chartered Accountants of Nigeria and of the Chartered Institute of Taxation of Nigeria, and a full Member of the Nigeria Institute of Management, London. He has worked with companies including the Leventis Group, Afro Continental Nigeria, Royal Investments Limited and Sakura Ventures Limited. A seasoned professional accountant, he has participated in audit assignments, taxation, consultancy and secretarial services, lectured part-time at the Department of Accountancy & Finance, Yaba College of Technology, and presented papers at seminars and workshops. He is a member of the Examinations Committee of the Chartered Institute of Taxation of Nigeria, where he serves as Vice Chairman, and has been in accountancy and audit practice for over 25 years.",
-    // Headshot extracted from page 6 of the company profile.
-    // TODO(verify): confirm this portrait is Chris' and not Ebenezer's.
-    image: "/team/chris-adeniyi.jpg",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQGGDtGNjMXcaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708102971158?e=1792022400&v=beta&t=agKk4NbMdZgscJjY03r2oV5A_9x5TwJpPYm0K_RU0-Y",
   },
   {
     slug: "odelusi-banke",

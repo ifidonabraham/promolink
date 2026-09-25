@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { SparklesIcon, ArrowRightIcon } from "@/components/icons";
 
@@ -360,177 +361,66 @@ export function AnimatedHeroArtwork() {
           }}
         />
 
-        {/* MODE 1: Offset & Digital Fine Stationery */}
+        {/* MODE 1: Supplied print stationery and executive-card artwork */}
         {mode === "offset" && (
-          <div className="relative w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
-            {/* Base Layer: Corporate Folder / Catalog */}
-            <div className="relative mx-auto h-52 w-64 rounded-2xl border border-brand-border bg-gradient-to-tr from-white via-brand-light to-brand-secondary/70 p-4 text-brand-dark shadow-xl dark:border-slate-700 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-white">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest text-brand-secondary">
-                  PROMOLINK PRINT CONCEPTS
-                </span>
-                <span className="rounded bg-brand/30 px-1.5 py-0.5 text-[9px] font-semibold text-brand-secondary">
-                  SPOT UV
-                </span>
-              </div>
-              <div className="mt-4">
-                <p className="text-xl font-black tracking-tight text-brand-dark dark:text-white">
-                  Corporate Stationery
-                </p>
-                <p className="text-xs text-slate-600 dark:text-slate-300">
-                  Precision offset, 450gsm silk with soft-touch matte lamination.
-                </p>
-              </div>
-
-              {/* Dynamic CMYK Calibration Density Bars */}
-              <div className="mt-8 flex items-center gap-1.5">
-                <span className="h-3 w-7 rounded-sm bg-[#00aeef] shadow-sm animate-pulse" title="Cyan (100%)" />
-                <span className="h-3 w-7 rounded-sm bg-[#ec008c] shadow-sm animate-pulse [animation-delay:150ms]" title="Magenta (100%)" />
-                <span className="h-3 w-7 rounded-sm bg-[#fff200] shadow-sm animate-pulse [animation-delay:300ms]" title="Yellow (100%)" />
-                <span className="h-3 w-7 rounded-sm bg-[#17202a] shadow-sm animate-pulse [animation-delay:450ms]" title="Key Black (100%)" />
-                <span className="h-3 w-7 rounded-sm bg-[#e3262e] shadow-sm animate-pulse [animation-delay:600ms]" title="PromoLink Spot Red" />
-                <span className="ml-auto text-[9px] font-mono text-slate-500 dark:text-slate-400">
-                  ΔE &lt; 0.8
-                </span>
-              </div>
-            </div>
-
-            {/* Overlapping Floating Layer: Luxury Gold Foil Business Card */}
-            <div
-              className="absolute -bottom-4 right-2 w-56 rounded-xl border border-amber-300/40 bg-gradient-to-br from-amber-500/20 via-white to-amber-100/40 p-3.5 shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 dark:from-slate-800 dark:via-slate-800/90 dark:to-amber-950/40 dark:border-amber-400/30"
-              style={{
-                transform: `translateZ(28px) rotate(4deg)`,
-              }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="h-3 w-14 rounded-full bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 shadow-sm" />
-                <span className="text-[9px] font-bold text-brand uppercase tracking-wider">
-                  Hot Foil
-                </span>
-              </div>
-              <p className="mt-2 text-xs font-bold text-slate-900 dark:text-white">
-                Executive Foil Card
-              </p>
-              <p className="text-[10px] text-slate-600 dark:text-slate-300">
-                Lagos HQ • 0803 430 2582
-              </p>
-              <div className="mt-2 flex items-center justify-between text-[8px] font-mono text-slate-500 dark:text-slate-400">
-                <span>Gold Foil Stamped</span>
-                <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
-                  ✓ Inspected
-                </span>
-              </div>
-            </div>
+          <div className="relative h-[280px] w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
+            <CollageCrop
+              region={{ x: 585, y: 0, width: 489, height: 415 }}
+              alt="PromoLink corporate stationery and letterhead examples"
+              className="left-[9%] top-[3%] z-10 w-[84%] rounded-2xl border border-white/80 shadow-2xl"
+            />
+            <CollageCrop
+              region={{ x: 0, y: 0, width: 580, height: 415 }}
+              alt="PromoLink executive foil business card examples"
+              className="bottom-[2%] right-[1%] z-20 w-[72%] rounded-xl border border-white/80 shadow-2xl"
+            />
+            <span className="absolute bottom-1 left-1 z-30 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-dark shadow-lg">
+              Offset print · foil · stationery
+            </span>
           </div>
         )}
 
-        {/* MODE 2: Signage, Lightboxes & Large Format */}
+        {/* MODE 2: Supplied illuminated signage and roll-up banner artwork */}
         {mode === "signage" && (
-          <div className="relative w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
-            {/* Luminous LED Lightbox Signage Mockup */}
-            <div className="relative mx-auto h-52 w-64 rounded-2xl border-4 border-brand/40 bg-gradient-to-br from-white via-brand-light to-brand-secondary/60 p-4 text-brand-dark shadow-[0_0_40px_rgba(227,38,46,0.25)] dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:shadow-[0_0_40px_rgba(227,38,46,0.35)]">
-              {/* Glowing LED Halo */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-brand/20 via-transparent to-cyan-500/20 opacity-80" />
-
-              <div className="relative z-10 flex h-full flex-col justify-between">
-                <div className="flex items-center justify-between">
-                  <span className="rounded bg-brand px-2 py-0.5 text-[9px] font-bold tracking-widest text-white shadow">
-                    ILLUMINATED 3D
-                  </span>
-                  <span className="text-[9px] font-mono text-cyan-400">
-                    6500K LED
-                  </span>
-                </div>
-
-                <div className="text-center py-3">
-                  <div className="inline-block rounded-xl border border-brand/40 bg-brand/20 px-4 py-2 shadow-[0_0_20px_rgba(227,38,46,0.4)]">
-                    <p className="text-2xl font-black tracking-wider text-brand-dark dark:text-white">
-                      PROMOLINK
-                    </p>
-                    <p className="text-[10px] font-bold tracking-widest text-brand-secondary">
-                      PRINT • SIGNAGE • OUTDOOR
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between border-t border-brand-border pt-2 text-[9px] text-slate-500 dark:border-slate-800 dark:text-slate-400">
-                  <span>Laser-cut Acrylic</span>
-                  <span className="text-amber-400">Weatherproof Guarantee</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Rollup Banner Accent */}
-            <div
-              className="absolute -bottom-3 -left-2 w-44 rounded-xl border border-cyan-400/30 bg-gradient-to-br from-cyan-50 via-white to-brand-secondary/60 p-2.5 text-brand-dark shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 dark:from-cyan-900/40 dark:via-slate-900 dark:to-slate-950 dark:text-white"
-              style={{
-                transform: `translateZ(24px) rotate(-5deg)`,
-              }}
-            >
-              <div className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-                <p className="text-[10px] font-bold text-cyan-200">
-                  Roll-Up Banners & Flex
-                </p>
-              </div>
-                <p className="mt-1 text-[9px] text-slate-600 dark:text-slate-300">
-                Vibrant UV-cured inks on tear-resistant vinyl.
-              </p>
-            </div>
+          <div className="relative h-[280px] w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
+            <CollageCrop
+              region={{ x: 803, y: 450, width: 451, height: 286 }}
+              alt="PromoLink illuminated 3D signage example"
+              className="right-0 top-[5%] z-10 w-[78%] rounded-2xl border border-white/80 shadow-2xl"
+            />
+            <CollageCrop
+              region={{ x: 0, y: 779, width: 438, height: 438 }}
+              alt="PromoLink roll-up banner design examples"
+              className="bottom-[1%] left-0 z-20 w-[57%] rounded-xl border border-white/80 shadow-2xl"
+            />
+            <span className="absolute bottom-[4%] right-0 z-30 rounded-full bg-slate-950/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-lg">
+              Lightboxes · banners · displays
+            </span>
           </div>
         )}
 
-        {/* MODE 3: Branded Apparel, Merchandise & Gifts */}
+        {/* MODE 3: Supplied screen-print, embroidery, and gift artwork */}
         {mode === "merchandise" && (
-          <div className="relative w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
-            {/* Branded Corporate Wear Mockup */}
-            <div className="relative mx-auto h-52 w-64 rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-brand-secondary/30 p-4 shadow-xl dark:border-slate-700 dark:from-slate-900 dark:via-slate-850 dark:to-slate-950">
-              <div className="flex items-center justify-between">
-                <span className="rounded-full bg-brand-light px-2 py-0.5 text-[9px] font-bold text-brand border border-brand/20 dark:bg-brand/20 dark:text-brand-secondary">
-                  SCREEN PRINT & EMBROIDERY
-                </span>
-                <span className="text-[9px] font-mono text-slate-500">
-                  100% Combed Cotton
-                </span>
-              </div>
-
-              <div className="my-3 flex items-center justify-center">
-                <div className="relative grid h-24 w-24 place-items-center rounded-2xl bg-gradient-to-tr from-brand to-rose-600 text-white shadow-lg shadow-brand/30">
-                  <div className="text-center">
-                    <p className="text-xs font-black tracking-tight">PROMO</p>
-                    <p className="text-[9px] font-bold tracking-widest text-brand-secondary">
-                      LINK
-                    </p>
-                  </div>
-                  <span className="absolute -bottom-1 -right-1 rounded-full bg-emerald-500 px-1.5 py-0.2 text-[8px] font-bold text-white shadow">
-                    HD
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between border-t border-slate-200/80 pt-2 text-[9px] text-slate-600 dark:border-slate-800 dark:text-slate-400">
-                <span>Direct-to-Film (DTF)</span>
-                <span className="font-semibold text-brand">No Washout</span>
-              </div>
-            </div>
-
-            {/* Floating Thermal Tumbler / Gift Mockup */}
-            <div
-              className="absolute -bottom-3 right-1 w-48 rounded-xl border border-brand/30 bg-gradient-to-br from-white via-brand-light to-brand-secondary/70 p-2.5 text-brand-dark shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 dark:from-slate-900 dark:via-slate-800 dark:to-black dark:text-white"
-              style={{
-                transform: `translateZ(26px) rotate(4deg)`,
-              }}
-            >
-              <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-amber-300">
-                  Laser Etched Tumbler
-                </p>
-                <SparklesIcon className="h-3 w-3 text-amber-300 animate-spin" />
-              </div>
-              <p className="mt-0.5 text-[9px] text-slate-600 dark:text-slate-300">
-                Premium matte steel with metallic laser engraving.
-              </p>
-            </div>
+          <div className="relative h-[280px] w-full max-w-[22rem] transition-all duration-500 animate-fadeIn">
+            <CollageCrop
+              region={{ x: 0, y: 450, width: 438, height: 286 }}
+              alt="PromoLink screen-printing design example"
+              className="left-[7%] top-[2%] z-10 w-[74%] rounded-2xl border border-white/80 shadow-2xl"
+            />
+            <CollageCrop
+              region={{ x: 445, y: 450, width: 355, height: 286 }}
+              alt="PromoLink embroidery design example"
+              className="bottom-[2%] left-0 z-20 w-[59%] rounded-xl border border-white/80 shadow-2xl"
+            />
+            <CollageCrop
+              region={{ x: 953, y: 779, width: 301, height: 438 }}
+              alt="PromoLink laser-etched tumbler example"
+              className="bottom-[1%] right-0 z-30 w-[29%] rounded-xl border border-white/80 shadow-2xl"
+            />
+            <span className="absolute right-0 top-0 z-40 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-dark shadow-lg">
+              <SparklesIcon className="h-3 w-3 text-brand" />
+              Branded merchandise
+            </span>
           </div>
         )}
       </div>
@@ -556,6 +446,43 @@ export function AnimatedHeroArtwork() {
           <ArrowRightIcon className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
         </Link>
       </div>
+    </div>
+  );
+}
+
+const COLLAGE_IMAGE = "/brand/promolink-showcase-collage.png";
+
+function CollageCrop({
+  region,
+  alt,
+  className,
+}: {
+  region: { x: number; y: number; width: number; height: number };
+  alt: string;
+  className: string;
+}) {
+  const sourceSize = 1254;
+
+  return (
+    <div
+      role="img"
+      aria-label={alt}
+      className={`absolute overflow-hidden bg-white ${className}`}
+      style={{ aspectRatio: `${region.width} / ${region.height}` }}
+    >
+      <Image
+        src={COLLAGE_IMAGE}
+        alt=""
+        width={sourceSize}
+        height={sourceSize}
+        sizes="(max-width: 640px) 70vw, 22rem"
+        className="absolute max-w-none"
+        style={{
+          width: `${(sourceSize / region.width) * 100}%`,
+          left: `${(-region.x / region.width) * 100}%`,
+          top: `${(-region.y / region.height) * 100}%`,
+        }}
+      />
     </div>
   );
 }
