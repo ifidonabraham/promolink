@@ -44,12 +44,36 @@ export const metadata: Metadata = {
     "screen printing Mushin",
   ],
   openGraph: {
-    title: `${site.legalName}`,
+    title: `${site.legalName} — Printing, Branding & Corporate Promotion`,
     description: site.description,
     url: site.url,
     siteName: site.legalName,
     locale: "en_NG",
     type: "website",
+    images: [
+      {
+        url: "/brand/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${site.legalName} — Printing, Corporate Branding & Large-Format Solutions in Lagos`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.legalName} — Printing, Branding & Corporate Promotion`,
+    description: site.description,
+    images: ["/brand/og-image.jpg"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   robots: { index: true, follow: true },
 };
