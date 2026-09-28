@@ -15,8 +15,8 @@ export const site = {
   description:
     "PromoLink Print Concepts Limited is a Lagos-based printing, corporate branding and promotional services company. Design, large-format and offset printing, signage, screen printing and branded merchandise — delivered end to end.",
 
-  // TODO: point at the production domain once it is registered.
-  url: "https://promolink.ng",
+  // Base URL used for metadata, Open Graph previews and canonical links
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://promolink1.vercel.app",
 
   phones: ["0803 430 2582", "0803 261 6222"],
   email: "promolinkmedia2010@gmail.com",
